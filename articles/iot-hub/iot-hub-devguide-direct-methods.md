@@ -50,7 +50,7 @@ The following reference topics provide you with more information about using dir
 ### Method invocation
 Direct method invocations on a device are HTTP calls which comprise:
 
-* The *URI* specific to the device (`{iot hub}/twins/{device id}/methods/?api-version=2016-11-14`).
+* The *URI* specific to the device (`{iot hub}/twins/{device id}/methods?api-version=2016-11-14`).
   If the request *URI* does not contain API version as suffix, IotHub endpoint will return response with header: "iothub-errorcode": "InvalidProtocolVersion",
 * The POST *method*
 * *Headers* which contain the Authorization, Content-Type, and optionally requestId  and Content-Encoding
@@ -66,12 +66,12 @@ Direct method invocations on a device are HTTP calls which comprise:
     }
 }
 ```
-Following shows an example of a valid request:
+The following snippet shows an example of a valid request:
  
  ```
 POST /twins/D001/methods?api-version=2016-11-14 HTTP/1.1
 Host: myhub.azure-devices.net
-Authorization: SharedAccessSignature sr=myhub.azure-devices.net&sig=Zg**SbzCyAKrc%2BDc%3D&se=1515923812&skn=iothubowner
+Authorization: SharedAccessSignature sr={yourhubname}.azure-devices.net&sig={yoursigvalue}&skn=iothubowner
 Content-Type: application/json
 Cache-Control: no-cache
 Postman-Token: 9bccb14d-f291-527d-f6c3-8c79476e193d
